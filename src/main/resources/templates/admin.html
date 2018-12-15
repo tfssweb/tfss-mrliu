@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+    
+<!-- 	<script th:src="@{/static/js/test.js}"></script> -->
+    
+</head>
+<body>
+
+<div>
+	用户姓名：<input th:id="${admin.username}" th:name="${admin.username}" th:value="${admin.username}"/>
+	<br/>
+	用户密码：<input th:id="${admin.password}" th:name="${admin.password}" th:value="${admin.password}"/>
+	<br/>
+</div>
+
+<div>
+	<form th:action="@{/admin/queryAdminList}" th:object="${admin}" method="post" th:method="post">
+	    <input type="text" th:field="*{username}"/>
+	    <input type="submit" value="queryAdminList"/>
+	
+	</form>
+</div>
+
+
+
+</body>
+</html>

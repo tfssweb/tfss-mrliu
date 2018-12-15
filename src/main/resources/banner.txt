@@ -1,0 +1,18 @@
+                                                                                                                                                                                                          
+MMMMMMMM               MMMMMMMM                        LLLLLLLLLLL              iiii                   
+M:::::::M             M:::::::M                        L:::::::::L             i::::i                  
+M::::::::M           M::::::::M                        L:::::::::L              iiii                   
+M:::::::::M         M:::::::::M                        LL:::::::LL                                     
+M::::::::::M       M::::::::::rrrrr   rrrrrrrrr          L:::::L              iiiiiiiuuuuuu    uuuuuu  
+M:::::::::::M     M:::::::::::r::::rrr:::::::::r         L:::::L              i:::::iu::::u    u::::u  
+M:::::::M::::M   M::::M:::::::r:::::::::::::::::r        L:::::L               i::::iu::::u    u::::u  
+M::::::M M::::M M::::M M::::::rr::::::rrrrr::::::r       L:::::L               i::::iu::::u    u::::u  
+M::::::M  M::::M::::M  M::::::Mr:::::r     r:::::r       L:::::L               i::::iu::::u    u::::u  
+M::::::M   M:::::::M   M::::::Mr:::::r     rrrrrrr       L:::::L               i::::iu::::u    u::::u  
+M::::::M    M:::::M    M::::::Mr:::::r                   L:::::L               i::::iu::::u    u::::u  
+M::::::M     MMMMM     M::::::Mr:::::r                   L:::::L         LLLLLLi::::iu:::::uuuu:::::u  
+M::::::M               M::::::Mr:::::r                 LL:::::::LLLLLLLLL:::::i::::::u:::::::::::::::uu
+M::::::M               M::::::Mr:::::r                 L::::::::::::::::::::::i::::::iu:::::::::::::::u
+M::::::M               M::::::Mr:::::r                 L::::::::::::::::::::::i::::::i uu::::::::uu:::u
+MMMMMMMM               MMMMMMMMrrrrrrr                 LLLLLLLLLLLLLLLLLLLLLLLiiiiiiii   uuuuuuuu  uuuu
+                                                                                                       

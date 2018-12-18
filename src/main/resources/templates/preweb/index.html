@@ -1,425 +1,156 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Mr.Liu - 即将上线·敬请等待</title>
 
-    <!-- META DATA -->
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
-    <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css" />
-    <link rel="stylesheet" href="static/css/bicolor.min.css" />
-
-<!-- 	价格 -->
-	<link href='https://fonts.googleapis.com/css?family=Homemade+Apple' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Sahitya:400,700' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:900' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,800' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css' />
-    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" type="text/css" href="static/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/default.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/icons.css" />
-    <link rel="stylesheet" type="text/css" href="static/css/component.css" />
+	<head>
+		<meta charset="UTF-8" />
+		<title>颓废书生</title>
+<!-- 		<script type="text/javascript" src="static/chplayer/chplayer.min.js"></script> -->
+	</head>
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css" />
+	<script type="text/javascript" src="static/chplayer/chplayer.js"></script>
 	
+	<body>
+	
+	<div class="container-fluid padding-top-10 padding-bottom-10">
+			<div class="row">
+				<div class="col-xs-12 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1">
+					<img src="static/images/logo.png" id="logo"  style="height: 50px;margin:18px 110px"/>
+				</div>
+				<div class="col-xs-12 col-sm-5 col-md-5 text-right padding-top-10">
+					<h5>当前版本：V1.0（更新时间：2018-12-18）</h5>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container-fluid padding-top-10">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+<!-- 					<div id="video" class="video"></div> -->
+					<div id="video" style="width: 860px; height: 500px;"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid padding-top-10">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<h3 class="playerstate">状态：等待加载播放器</h3>
+					<p class="metadata"></p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container-fluid">
+		
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<h3>操作功能：</h3>
+				</div>
+			</div>
+		
+			<div class="row padding-bottom-10">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<button type="button" class="btn btn-primary" onclick="player.play()">播放</button>
+					<button type="button" class="btn btn-success" onclick="player.pause()">暂停</button>
+					<button type="button" class="btn btn-info" onclick="player.playOrPause()">播放/暂停</button>
+					<button type="button" class="btn btn-warning" onclick="loadedMetaDataHandler()">获取元数据</button>
+					<button type="button" class="btn btn-success" onclick="newElement()">添加元件</button>
+					<button type="button" class="btn btn-info" onclick="newDanmu()">添加弹幕</button>
+					<a class="btn btn-success" href="manual/animate.html" target="_blank">更多弹幕动作</a>
+				</div>
+			</div>
+			
+			<div class="row padding-bottom-10">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-sm-offset-2 col-md-offset-2">
+					<div class="inputleft input-group">
+						<div class="input-group-addon">跳转时间：</div>
+						<input type="text" class="textinput seektime form-control" placeholder="0" value="20" />
+						<div class="input-group-addon">秒</div>
+					</div>
+					<span class="floatleft">
+					    <button type="button" class="btn btn-info" onclick="seekTime()">跳转</button>
+					</span>
+				</div>
+			</div>
+			
+			<div class="row padding-bottom-10">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-sm-offset-2 col-md-offset-2">
+					<div class="inputleft input-group">
+						<div class="input-group-addon">设置音量：</div>
+						<input type="text" class="textinput changevolume form-control" placeholder="0.2" value="0.2" />
+					</div>
+					<span class="floatleft">
+					    <button type="button" class="btn btn-info" onclick="changeVolume()">设置</button>
+					</span>
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<div class="inputleft input-group">
+						<div class="input-group-addon">设置一个新视频地址：</div>
+						<input type="text" class="videourl form-control" placeholder="视频地址" value="http://vjs.zencdn.net/v/oceans.mp4" />
+					</div>
+					<div class="floatleft">
+						<button type="button" class="btn btn-info" onclick="newVideo()">播放</button>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<div class="inputleft input-group">
+						<div class="input-group-addon">设置一个新视频地址：</div>
+						<input type="text" class="videourl2 form-control" placeholder="视频地址" value="http://img.ksbbs.com/asset/Mon_1703/d30e02a5626c066.mp4" />
+					</div>
+					<div class="floatleft">
+						<button type="button" class="btn btn-info" onclick="newVideo2()">播放</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid padding-top-10">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<h3>监听功能：</h3>
+					<p class="handler">
+						<span class="playstate btn btn-primary">播放状态：暂停</span>
+						<span class="seekstate btn btn-danger">无跳转时间</span>
+						<span class="volumechangestate btn btn-info">当前音量：0.8</span>
+						<span class="fullstate btn btn-warning">是否全屏：否</span>
+						<span class="endedstate btn btn-success">还未结束</span>
+						<span class="videochangestate btn btn-danger">视频地址正常</span>
+						<span class="currenttimestate btn btn-info">当前播放时间（秒）：0</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container-fluid padding-top-10">
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+					<h3>极简调用代码：</h3>
+					<pre>&lt;script type="text/javascript" src="chplayer/chplayer.js"&gt;&lt;/script&gt;
+&lt;div id="video" style="width:600px;height:400px;"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+	var videoObject = {
+		container: '#video',//“#”代表容器的ID，“.”或“”代表容器的class
+		variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+		video:'examples01.mp4'//视频地址
+	};
+	var player=new chplayer(videoObject);
+&lt;/script&gt;</pre>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="static/js/video.js"></script>
+		
+	</body>
 
-    <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="static/css/animate.min.css" />
-    <link rel="stylesheet" href="static/css/style.css" />
-    <!--<link rel="stylesheet" href="static/css/custom.css">-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- FAVICONS -->
-    <link rel="shortcut icon" href="static/img/favicon.png" />
-    <link rel="apple-touch-icon" href="static/img/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="static/img/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="static/img/apple-touch-icon-114x114.png" />
-
-</head>
-<body>
-<!-- Thymeleaf模板引擎 -->
-<!-- <h1 th:text="${name}">hello world~~~~~~~</h1> -->
-<div id="awd-site-wrap" class="bg bg-home">
-
-<div id="bg">
-    <div id="overlay">
-        <div class="awd-site-bg bg-home"></div>
-        <div class="awd-site-bg bg-subscribe"></div>
-        <div class="awd-site-bg bg-about"></div>
-        <div class="awd-site-bg bg-contact"></div>
-        <div class="awd-site-bg bg-services"></div>
-    </div>
-    <canvas id="awd-site-canvas"></canvas>
-</div>
-
-<!-- START SITE HEADER -->
-<header id="awd-site-header">
-    <div id="awd-site-logo" class="animated" data-animation="fadeInDown" data-animation-delay="500">
-        <h1><a href="#" class="go-slide" data-slide="home"><i class="fa fa-commenting-o"></i><span>Mr.Liu</span></a></h1>
-    </div>
-
-    <button class="menu-toggle animated" data-animation="fadeInDown" data-animation-delay="500" data-role="toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- START NAVIGATION -->
-    <nav id="awd-site-nav" class="navigation animated" data-animation="fadeInDown" data-animation-delay="500">
-        <div class="nav-container">
-
-            <!-- START NAVIGATION MENU ITEMS -->
-            <ul>
-                <li><a href="#" data-slide="home" class="active">首页</a></li>
-                <li><a href="#" data-slide="subscribe">订阅</a></li>
-                <li><a href="#" data-slide="about">关于</a></li>
-                <li><a href="#" data-slide="services">服务</a></li>
-                <li><a href="#" data-slide="contact">联系我们</a></li>
-            </ul>
-            <!-- END NAVIGATION MENU ITEMS -->
-
-        </div>
-    </nav>
-    <!-- END NAVIGATION -->
-</header>
-<!-- END SITE HEADER -->
-
-<!-- START MAIN -->
-<main id="awd-site-main">
-<!-- START SECTION -->
-<section id="awd-site-content">
-<div class="sections-block">
-<div class="slides">
-
-<div class="slides-wrap">
-<!-- HOME SECTION -->
-<div class="slide-item" data-slide-id="home">
-    <!-- START CONTAINER -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- START SLIDE CONTENT-->
-                <div class="slide-content">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 svm">
-                            <div class="section-info text-left">
-                                <div class="countdown">
-                                    <div id="clock" class="animated" data-animation="fadeIn" data-animation-delay="60"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-lg-offset-1 col-md-6 svm">
-                            <div class="section-info text-right">
-                                <!-- START TITLE -->
-                                <h2 class="section-title text-default animated" data-animation="fadeIn" data-animation-delay="50">Hey
-                                    Guys!<br/> 我们即将上线啦...</h2>
-                                <!-- END TITLE -->
-                                <p class="animated" data-animation="fadeIn" data-animation-delay="55">我们的网站正在建设.<br/> 它将是非常棒的网站.</p>
-                                <a href="#" class="btn go-slide animated" data-animation="fadeIn" data-animation-delay="60" data-slide="about">更多资料</a>
-                                <a href="#" class="btn btn-inverse go-slide animated" data-animation="fadeIn" data-animation-delay="60" data-slide="subscribe">联系我们!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE CONTENT-->
-            </div>
-        </div>
-    </div>
-    <!-- END CONTAINER -->
-</div>
-
-<!-- SUBSCRIBE SECTION -->
-<div class="slide-item" data-slide-id="subscribe">
-    <!-- START CONTAINER -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-
-                <!-- START SLIDE CONTENT-->
-                <div class="slide-content">
-
-                    <div class="row">
-                        <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-md-push-5 svm">
-                            <div class="section-info text-right">
-                                <!-- START TITLE -->
-                                <h2 class="section-title text-default animated" data-animation="fadeIn" data-animation-delay="60">订阅  <br/> 我们的通讯</h2>
-                                <!-- END TITLE -->
-
-                                <p class="animated" data-animation="fadeIn" data-animation-delay="100">加入我们的邮件通讯.
-                                    <strong>它的快速和容易.</strong><br/> 你将成为第一个知道<br/> 我们项目启动的人.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-md-pull-7 svm">
-                            <div class="section-info text-left">
-                                <p><strong>别忘了</strong>点击确认电子邮件,您将会收到以<strong>激活</strong>您的订阅。</p>
-                                <!-- Subscribe Form -->
-                                <div class="row">
-                                    <div class="col-md-12 col-md-offset-0 col-sm-8 col-sm-offset-2">
-                                        <form id="subscribe-form" class="subscribe-form" method="post">
-                                            <input type="email" id="subscribe-email"
-                                                   name="subscribe-email" placeholder="请留下你的邮箱地址"/>
-                                            <button type="submit" id="subscribe-submit" class="btn btn-inverse">
-                                                <span>订阅</span> <i class="fa fa-envelope"></i></button>
-                                            <div class="form-notice subscribe-notice"></div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <!-- end Subscribe Form -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE CONTENT-->
-            </div>
-        </div>
-        <!-- END ROW -->
-    </div>
-    <!-- END CONTAINER -->
-</div>
-
-<!-- ABOUT SECTION -->
-<div class="slide-item" data-slide-id="about">
-    <!-- START CONTAINER -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-
-                <!-- START SLIDE CONTENT-->
-                <div class="slide-content">
-                    <div class="row">
-                        <div class="col-lg-5 col-lg-offset-2 col-md-6 col-md-offset-1 col-md-push-5 svm">
-                            <div class="section-info text-right">
-                                <!-- START TITLE -->
-                                <h2 class="section-title text-default animated" data-animation="fadeIn" data-animation-delay="60">关于我们</h2>
-                                <!-- END TITLE -->
-                                <p class="animated" data-animation="fadeIn" data-animation-delay="100">公司致力于为客户提供专业的电信增值服务，帮助企业便捷接入验证码短信、短信通知、语音验证码、国际验证码、短信公众号、短信营销、彩信营销、数字奖励营销、手机话费充值、手机流量充值等电信增值服务，满足企业运营、营销推广多场景需要。</p>
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-md-pull-7 svm">
-                            <div class="section-info text-left">
-                                <!-- START FEATURES-LIST -->
-                                <div class="features-list">
-
-                                    <!-- FEATURE -->
-                                    <div class="featured-item animated" data-animation="fadeIn"
-                                         data-animation-delay="150">
-                                        <div class="featured-text">
-                                            <h3><i class="fa fa-rocket"></i> 安全高效</h3>
-
-                                            <p>多年的技术积累与创新，树立在该领域的标杆地位。业务平台及软件全部自主研发，且都通过了国家知识产权认定。</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="featured-item">
-                                        <!-- FEATURE -->
-                                        <div class="featured-item animated" data-animation="fadeIn"
-                                             data-animation-delay="150">
-                                            <div class="featured-text">
-                                                <h3><i class="icon-paint"></i> 高性能、高并发</h3>
-
-                                                <p>在互联网及通讯行业有十几年的技术研发和运营维护经验，掌握高性能、高并发、大数据处理技术。</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- END FEATURES-LIST -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END SLIDE CONTENT-->
-            </div>
-        </div>
-        <!-- END ROW -->
-    </div>
-    <!-- END CONTAINER -->
-</div>
-
-<!-- shadowsocks -->
-<div class="slide-item" data-slide-id="services">
-    <!-- START CONTAINER -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-<!--             <div class="container"> -->
-            <div class="pricing pricing--norbu">
-                <div class="pricing__item" >
-                    <h3 class="pricing__title">低级配置</h3>
-                    <p class="pricing__sentence">针对于初学使用者</p>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>10<span class="pricing__period">/ month</span></div>
-                    <ul class="pricing__feature-list">
-                        <li>免费搭建网站</li>
-                        <li>免费访问，享受更快速度</li>
-                        <li>更多知识点</li>
-                    </ul>
-                    <button class="pricing__action">购买</button>
-                </div>
-                <div class="pricing__item pricing__item--featured">
-                    <h3 class="pricing__title">中级配置</h3>
-                    <p class="pricing__sentence">针对于中级使用者</p>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>14<span class="pricing__period">/ month</span></div>
-                    <ul class="pricing__feature-list">
-                        <li>免费搭建网站</li>
-                        <li>免费访问，享受更快速度</li>
-                        <li>更多知识点</li>
-                    </ul>
-                    <button class="pricing__action">购买</button>
-                </div>
-                <div class="pricing__item pricing__item--featured">
-                    <h3 class="pricing__title">中级配置</h3>
-                    <p class="pricing__sentence">针对于中级使用者</p>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>18<span class="pricing__period">/ month</span></div>
-                    <ul class="pricing__feature-list">
-                        <li>免费搭建网站</li>
-                        <li>免费访问，享受更快速度</li>
-                        <li>更多知识点</li>
-                    </ul>
-                    <button class="pricing__action">购买</button>
-                </div>
-                <div class="pricing__item">
-                    <h3 class="pricing__title">高级配置</h3>
-                    <p class="pricing__sentence">针对于专业使用者</p>
-                    <div class="pricing__price"><span class="pricing__currency">$</span>25<span class="pricing__period">/ month</span></div>
-                    <ul class="pricing__feature-list">
-                       	<li>免费搭建网站</li>
-                        <li>免费访问，享受更快速度</li>
-                        <li>更多知识点</li>
-                    </ul>
-                    <button class="pricing__action">购买</button>
-                </div>
-            </div>
-<!-- 		</div> -->
-            </div>
-        </div>
-        <!-- END ROW -->
-    </div>
-    <!-- END CONTAINER -->
-</div>
-
-<!-- CONTACT SECTION -->
-<div class="slide-item" data-slide-id="contact">
-    <!-- START CONTAINER -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- START SLIDE CONTENT-->
-                <div class="slide-content">
-                    <div class="row">
-                        <div class="col-lg-5 col-lg-offset-1 col-md-6 col-md-push-6 svm">
-
-                            <div class="section-info text-right">
-                                <!-- START TITLE -->
-                                <h2 class="section-title text-default animated" data-animation="fadeIn">联系我们</h2>
-                                <!-- END TITLE -->
-                                <div class="contact-info">
-                                    <p class="contact-item"><i class="fa fa-phone"></i> 固话: 0571-6237 8527</p>
-                                    <p class="contact-item"><i class="fa fa-envelope"></i> 邮箱: 62378527@qq.com</p>
-                                    <p class="contact-item"><i class="fa fa-map-marker"></i> 浙江 杭州 紫金创业园 C座 6栋606</p>
-                                </div>
-                                <p class="animated" data-animation="fadeIn" data-animation-delay="100">
-									<h3>通信能力创新 让通讯更简单</h3>
-									<h5>优质便捷的云通信服务平台</h5>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-md-pull-6 svm">
-                            <div class="section-info text-left">
-                            <!-- START CONTACT FORM -->
-                            <form id="contact-form" class="contact-form">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-md-12 animated" data-animation="fadeIn" data-animation-delay="200">
-                                        <input type="text" name="contact-name" placeholder="真实姓名"
-                                               class="contact-form-name required" />
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-md-12 animated" data-animation="fadeIn" data-animation-delay="200">
-                                        <input type="email" name="contact-email" placeholder="电子邮箱"
-                                               class="contact-form-email required" />
-                                    </div>
-                                    <div class="col-lg-4 col-md-12 animated" data-animation="fadeIn" data-animation-delay="200">
-                                        <input type="text" name="contact-subject" placeholder="从事行业"
-                                               class="contact-form-subject required" />
-                                    </div>
-                                    <!-- END COLUMN 4 -->
-                                    <div class="col-md-12 animated" data-animation="fadeIn" data-animation-delay="150">
-                                        <textarea name="contact-message" placeholder="说两句吧..."
-                                                  class="contact-form-message required"
-                                                  rows="4"></textarea>
-                                        <button class="btn btn-block" type="submit" id="submit" name="submit"><span>放飞梦想</span>
-                                            <i class="fa fa-send"></i></button>
-                                    </div>
-                                    <!-- END COLUMN 8 -->
-                                </div>
-                                <!-- END ROW -->
-                                <div class="contact-notice"></div>
-                            </form>
-                            <!-- END CONTACT FORM -->
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- END SLIDE CONTENT-->
-            </div>
-        </div>
-        <!-- END ROW -->
-    </div>
-    <!-- END CONTAINER -->
-</div>
-
-</div>
-</div>
-</div>
-</section>
-<!-- END SECTION -->
-</main>
-<!-- END MAIN -->
-
-
-<footer id="awd-site-footer">
-    <!-- START COPYRIGHT -->
-    <div class="copyright animated" data-animation="fadeInUp" data-animation-delay="500">
-        <p>© 2018 Mr.Liu - All Rights Reserved</p>
-    </div>
-    <!-- END COPYRIGHT -->
-
-    <!-- START SOCIAL ICONS -->
-    <nav class="social-icons animated" data-animation="fadeInUp" data-animation-delay="500">
-        <ul>
-            <li title="兼容火狐"><a href="###"><i class="fa fa-firefox"></i></a></li>
-            <li title="兼容Opera"><a href="###"><i class="fa fa-opera"></i></a></li>
-            <li title="兼容IE"><a href="###"><i class="fa fa-internet-explorer"></i></a></li>
-            <li title="兼容谷歌"><a href="###"><i class="fa fa-chrome"></i></a></li>
-        	<li title="圆象街茶叶"><a target="_blank" href="https://shop156573949.taobao.com/"><i class="fa fa-leaf"></i></a></li>
-            <li title="QQ"><a href="###"><i class="fa fa-qq"></i></a></li>
-            <li title="WeChat"><a href="###"><i class="fa fa-weixin"></i></a></li>
-            <li title="微博"><a href="###"><i class="fa fa-weibo"></i></a></li>
-            <li title="开始"><a href="###"><i class="fa fa-windows"></i></a></li>
-        </ul>
-    </nav>
-    <!-- END SOCIAL ICONS -->
-</footer>
-
-</div>
-
-<!-- JS -->
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/js/vendor.js"></script>
-<script type="text/javascript" src="static/js/options.js"></script>
-<script type="text/javascript" src="static/js/main.js"></script>
-
-</body>
 </html>

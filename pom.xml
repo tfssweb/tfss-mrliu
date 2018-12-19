@@ -6,7 +6,8 @@
 	<groupId>com.mrliu</groupId>
 	<artifactId>tfss-mrliu</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+<!-- 	<packaging>war</packaging> -->
+	<packaging>jar</packaging>
 
 	<name>tfss-mrliu</name>
 	<description>tfss-mrliu project for Spring Boot</description>

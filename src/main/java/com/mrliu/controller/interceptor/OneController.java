@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mrliu.generate.pojo.Admin;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion.User;
+//import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion.User;
 
 @Controller
 @RequestMapping("one")
@@ -53,9 +53,9 @@ public class OneController {
         return "commingsoon/test";
     }
 	
-	@PostMapping("postform")
-    public String postform(User user) {
-		System.out.println(user.getName());
-        return "redirect:/th/test";
-    }
+//	@PostMapping("postform")
+//    public String postform(User user) {
+//		System.out.println(user.getName());
+//        return "redirect:/th/test";
+//    }
 }

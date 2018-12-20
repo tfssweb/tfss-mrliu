@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="common::commonHeader('影视')">
-    <meta charset="utf-8">
+<head th:replace="frontend/common::commonHeader('影视')">
+    <meta charset="utf-8" />
     <title>Title</title>
 </head>
 <body>
 <div class="container">
-    <div th:include="common::commonNav"></div>
+    <div th:include="frontend/common::commonNav"></div>
     <div class="panel panel-primary">
         <!-- Default panel contents -->
         <div class="panel-heading" th:text="影视列表">影视</div>
@@ -14,19 +14,22 @@
         <!-- Table -->
         <table class="table table-striped">
             <tbody>
-            <tr th:each="list : ${videosDto.directorys}">
-                <td>
-                    <a class="btn btn-default" th:text="${list.type}"></a>
-                    <a class="btn btn-link" th:text="${list.name}" th:href="${videos_url} + '?lid=' + ${lid} + '&path=' + ${path} + '/' + ${list.name}">11</a>
-                </td>
-            </tr>
-            <tr th:each="list : ${videosDto.videos}">
+<!--             <tr th:each="list : ${videosDto.directorys}"> -->
+<!--                 <td> -->
+<!--                     <a class="btn btn-default" th:text="${list.type}"></a> -->
+<!--                     <a class="btn btn-link" th:text="${list.name}" th:href="${videos_url} + '?lid=' + ${lid} + '&path=' + ${path} + '/' + ${list.name}">11</a> -->
+<!--                 </td> -->
+<!--             </tr> -->
+            <tr th:each="video : ${videoList}">
                 <td>
                     <form action="/ckplayer" method="post">
-                        <a class="btn btn-default" th:text="${list.type}"></a>
-                        <input type="hidden" name="name" th:value="${list.name}">
-                        <input type="hidden" name="path" th:value="${videosDto.vPath} + ${path}">
-                        <button class="btn btn-link" th:text="${list.name}">11</button>
+                        <a class="btn btn-default" th:text="${video.id}"></a>
+                        <a class="btn btn-default" th:text="${video.path}"></a>
+                        <a class="btn btn-default" th:text="${video.type}"></a>
+                        <a class="btn btn-default" th:text="${video.version}"></a>
+                        <a class="btn btn-default" th:text="${video.weight}"></a>
+                        <input type="hidden" name="path" th:value="${video}">
+                        <button class="btn btn-link" th:text="${video.version}">11</button>
                     </form>
                 </td>
             </tr>
@@ -34,7 +37,7 @@
         </table>
 
     </div>
-    <div th:include="common::commonFooter"></div>
+    <div th:include="frontend/common::commonFooter"></div>
 </div>
 
 </body>

@@ -24,6 +24,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
 <!-- 		<thymeleaf-layout-dialect.version>2.2.0</thymeleaf-layout-dialect.version> -->
+	<!--3相比2极大的提高了效率,并且不需要标签闭合,类似的link,img等都有了很好的支持,按照如下配置即可-->
+	   <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+	   <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+
 	</properties>
 
 	<dependencies>

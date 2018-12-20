@@ -2,7 +2,8 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
 	<!-- 引入配置文件 -->
-	<properties resource="config.properties"/>
+<!-- 	<properties resource="classpath:doc/mybatisGenerator/config.properties"/> -->
+	<properties resource="doc/mybatisGenerator/config.properties"/>
 	
 	<!-- 指定数据连接驱动jar地址 -->
 	<classPathEntry location="${classPath}" />
@@ -65,9 +66,9 @@
 			<!-- 指定列的java数据类型 -->
 <!-- 	      	<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> -->
 <!-- 		</table> -->
-		<table tableName="t_admin" domainObjectName="Admin"/> 
+<!-- 		<table tableName="t_admin" domainObjectName="Admin"/>  -->
 <!-- 		<table tableName="t_mjmiaccttyp" domainObjectName="Mjmiaccttyp"/>  -->
 <!-- 		<table tableName="t_picture" domainObjectName="Picture"/>  -->
-<!-- 		<table tableName="t_product" domainObjectName="Product"/>  -->
+		<table tableName="t_ckplayer_video" domainObjectName="Video"/> 
 	</context>
 </generatorConfiguration>

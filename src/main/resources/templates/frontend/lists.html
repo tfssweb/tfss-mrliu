@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common::commonHeader('影视')">
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div th:include="common::commonNav"></div>
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading" th:text="影视列表">影视</div>
+
+        <!-- Table -->
+        <table class="table table-striped">
+            <tbody>
+            <tr th:each="list : ${lists}">
+                <td><a th:text="${list.name}" th:href="${videos_url} + '?lid=' + ${list.id}">11</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <div th:include="common::commonFooter"></div>
+</div>
+
+</body>
+</html>

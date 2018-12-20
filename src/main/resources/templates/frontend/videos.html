@@ -24,12 +24,15 @@
                 <td>
                     <form action="/ckplayer" method="post">
                         <a class="btn btn-default" th:text="${video.id}"></a>
+                        <a class="btn btn-default" th:text="${video.name}"></a>
+                        <a class="btn btn-default" th:text="${video.label}"></a>
                         <a class="btn btn-default" th:text="${video.path}"></a>
+                        <a class="btn btn-default" th:text="${video.introduce}"></a>
                         <a class="btn btn-default" th:text="${video.type}"></a>
                         <a class="btn btn-default" th:text="${video.version}"></a>
                         <a class="btn btn-default" th:text="${video.weight}"></a>
                         <input type="hidden" name="id" th:value="${video.id}">
-                        <button class="btn btn-link" th:text="${video.version}">11</button>
+                        <button class="btn btn-link" >播放</button>
                     </form>
                 </td>
             </tr>

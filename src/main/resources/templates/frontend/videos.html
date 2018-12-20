@@ -23,6 +23,7 @@
             <tr th:each="video : ${videoList}">
                 <td>
                     <form action="/ckplayer" method="post">
+                        <button class="btn btn-success" >播放</button>
                         <a class="btn btn-default" th:text="${video.id}"></a>
                         <a class="btn btn btn-info" th:text="${video.name}"></a>
                         <a class="btn btn-default" th:text="${video.label}"></a>
@@ -32,7 +33,6 @@
                         <a class="btn btn-default" th:text="${video.version}"></a>
                         <a class="btn btn-warning" th:text="${video.weight}"></a>
                         <input type="hidden" name="id" th:value="${video.id}">
-                        <button class="btn btn-success" >播放</button>
                     </form>
                 </td>
             </tr>

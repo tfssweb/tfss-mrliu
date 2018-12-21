@@ -15,7 +15,7 @@
 	
 		<!-- 注释 -->
 		<commentGenerator >
-			<property name="suppressAllComments" value="true"/><!-- 是否取消注释 -->
+			<property name="suppressAllComments" value="false"/><!-- 是否取消注释 -->
 			<property name="suppressDate" value="false" /> <!-- 是否生成注释代时间戳-->
 		</commentGenerator>
 		
@@ -68,7 +68,7 @@
 <!-- 		</table> -->
 <!-- 		<table tableName="t_admin" domainObjectName="Admin"/>  -->
 <!-- 		<table tableName="t_mjmiaccttyp" domainObjectName="Mjmiaccttyp"/>  -->
-<!-- 		<table tableName="t_picture" domainObjectName="Picture"/>  -->
+<!-- 		<table tableName="t_user_info" domainObjectName="UserInfo"/>  -->
 		<table tableName="t_ckplayer_video" domainObjectName="Video"/> 
 	</context>
 </generatorConfiguration>

@@ -42,7 +42,7 @@ public class VideoController {
 	 public String viedo(Model model, Video video) {
 
 		VideoExample videoExample = new VideoExample();
-		videoExample.createCriteria().andIdEqualTo(video.getId());
+		videoExample.createCriteria().andVideoIdEqualTo(video.getVideoId());
 		Video video2 = DataAccessManager.getMapper(VideoMapper.class).selectByExample(videoExample).get(0);
         model.addAttribute("videoInfo", video2);
         return "frontend/ckplayer";

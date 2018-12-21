@@ -25,15 +25,15 @@
                 <td>
                     <form action="/ckplayer" method="post">
                         <button class="btn btn-success" >播放</button>
-                        <a class="btn btn-default" th:text="${video.id}"></a>
-                        <a class="btn btn btn-info" th:text="${video.name}"></a>
-                        <a class="btn btn-default" th:text="${video.label}"></a>
-                        <a class="btn btn-link" th:text="${video.path}"></a>
-                        <a class="btn btn-default" th:text="${video.introduce}"></a>
-                        <a class="btn btn-primary" th:text="${video.type}"></a>
-                        <a class="btn btn-default" th:text="${video.version}"></a>
-                        <a class="btn btn-warning" th:text="${video.weight}"></a>
-                        <input type="hidden" name="id" th:value="${video.id}">
+                        <a class="btn btn-default" th:text="${video.videoId}"></a>
+                        <a class="btn btn btn-info" th:text="${video.videoName}"></a>
+                        <a class="btn btn-default" th:text="${video.videoLabel}"></a>
+                        <a class="btn btn-link" th:text="${video.videoUrl}"></a>
+                        <a class="btn btn-default" th:text="${video.videoInfo}"></a>
+                        <a class="btn btn-primary" th:text="${video.videoPattern}"></a>
+                        <a class="btn btn-default" th:text="${video.videoClarity}"></a>
+                        <a class="btn btn-warning" th:text="${video.videoWeight}"></a>
+                        <input type="hidden" name="videoId" th:value="${video.videoId}">
                     </form>
                 </td>
             </tr>

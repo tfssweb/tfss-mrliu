@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-12-21 10:55:41
+Date: 2018-12-21 15:20:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,14 +57,14 @@ CREATE TABLE `t_ckplayer_video` (
 -- ----------------------------
 -- Records of t_ckplayer_video
 -- ----------------------------
-INSERT INTO `t_ckplayer_video` VALUES ('1', 'http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4', 'video/mp4', '中文标清', '0', '我的梦', '音乐MV', '就是一段音乐啊', null, null, '音乐MV', null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('2', 'http://vjs.zencdn.net/v/oceans.mp4', 'video/mp4', '中文高清', '0', '动物世界', '视频', '就是小动物们', null, null, null, null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('3', 'http://img.ksbbs.com/asset/Mon_1703/eb048d7839442d0.mp4', 'video/mp4', '英文高清', '10', '我的梦', '音乐MV', '就是一段音乐啊', null, null, null, null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('4', 'http://img.ksbbs.com/asset/Mon_1703/d30e02a5626c066.mp4', 'video/mp4', '英文超清', '0', '我的梦', '音乐MV', '就是一段音乐啊', null, null, null, null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('5', 'https://media.w3.org/2010/05/sintel/trailer.mp4', 'video/mp4', '英文超清', '4', '动漫', '动漫', '动漫动漫', null, null, null, null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('6', 'http://www.w3school.com.cn/example/html5/mov_bbb.mp4', 'video/mp4', '英文超清', '0', '动漫', '动漫', '动漫', null, null, null, null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('8', 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', 'video/mp4', '中文高清', '0', '动漫', '动漫', '动漫', null, null, null, null, null, null, null);
-INSERT INTO `t_ckplayer_video` VALUES ('9', 'http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4', 'video/mp4', '中文高清', '1', '大圣归来', '从前的我', '西游记之《大圣归来》主题曲', null, null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('1', 'http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4', 'video/mp4', '中文标清', '0', '我的梦', '音乐MV', '就是一段音乐啊', 'static/images/1.jpg', null, '音乐MV', null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('2', 'http://vjs.zencdn.net/v/oceans.mp4', 'video/mp4', '中文高清', '0', '动物世界', '视频', '就是小动物们', 'static/images/2.jpg', null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('3', 'http://img.ksbbs.com/asset/Mon_1703/eb048d7839442d0.mp4', 'video/mp4', '英文高清', '10', '我的梦', '音乐MV', '就是一段音乐啊', 'static/images/3.jpg', null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('4', 'http://img.ksbbs.com/asset/Mon_1703/d30e02a5626c066.mp4', 'video/mp4', '英文超清', '0', '我的梦', '音乐MV', '就是一段音乐啊', 'static/images/4.jpg', null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('5', 'https://media.w3.org/2010/05/sintel/trailer.mp4', 'video/mp4', '英文超清', '4', '动漫', '动漫', '动漫动漫', 'static/images/5.jpg', null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('6', 'http://www.w3school.com.cn/example/html5/mov_bbb.mp4', 'video/mp4', '英文超清', '0', '动漫', '动漫', '动漫', 'static/images/6.jpg', null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('8', 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4', 'video/mp4', '中文高清', '0', '动漫', '动漫', '动漫', 'static/images/7.jpg', null, null, null, null, null, null);
+INSERT INTO `t_ckplayer_video` VALUES ('9', 'http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4', 'video/mp4', '中文高清', '1', '大圣归来', '从前的我', '西游记之《大圣归来》主题曲', 'static/images/8.jpg', null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for t_user_info

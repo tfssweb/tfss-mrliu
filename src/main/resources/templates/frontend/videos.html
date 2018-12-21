@@ -6,43 +6,25 @@
     <title>影视</title>
 </head>
 <body>
-<div class="container">
-    <div th:include="frontend/common::commonNav"></div>
-    <div class="panel panel-primary">
-        <!-- Default panel contents -->
-        <div class="panel-heading" th:text="影视列表">影视</div>
-
-        <!-- Table -->
-        <table class="table table-striped">
-            <tbody>
-<!--             <tr th:each="list : ${videosDto.directorys}"> -->
-<!--                 <td> -->
-<!--                     <a class="btn btn-default" th:text="${list.type}"></a> -->
-<!--                     <a class="btn btn-link" th:text="${list.name}" th:href="${videos_url} + '?lid=' + ${lid} + '&path=' + ${path} + '/' + ${list.name}">11</a> -->
-<!--                 </td> -->
-<!--             </tr> -->
-            <tr th:each="video : ${videoList}">
-                <td>
-                    <form action="/ckplayer" method="post">
-                        <button class="btn btn-success" >播放</button>
-                        <a class="btn btn-default" th:text="${video.videoId}"></a>
-                        <a class="btn btn btn-info" th:text="${video.videoName}"></a>
-                        <a class="btn btn-default" th:text="${video.videoLabel}"></a>
-                        <a class="btn btn-link" th:text="${video.videoUrl}"></a>
-                        <a class="btn btn-default" th:text="${video.videoInfo}"></a>
-                        <a class="btn btn-primary" th:text="${video.videoPattern}"></a>
-                        <a class="btn btn-default" th:text="${video.videoClarity}"></a>
-                        <a class="btn btn-warning" th:text="${video.videoWeight}"></a>
-                        <input type="hidden" name="videoId" th:value="${video.videoId}">
-                    </form>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-    <div th:include="frontend/common::commonFooter"></div>
-</div>
+	<div class="container">
+	    <div th:include="frontend/common::commonNav"></div>
+	    <div class="panel panel-primary">
+	        <!-- Default panel contents -->
+	        <div class="panel-heading" th:text="影视列表">影视</div>
+			<table>
+			
+		        <thead>
+		            <tr th:each="video : ${videoList}" >
+		           	 <form action="/ckplayer" method="post">
+		           		 <input type="hidden" name="videoId" th:value="${video.videoId}">
+						 <input type="image" th:src="${video.videoThumbnail}" src="static/images/logo.png" alt="点击播放" class="img-rounded" style="width: 140px;height: 180px;margin: 23px 15px 10px 30px"/>
+		            </form>
+		            </tr>
+		        </thead>
+			</table>
+	    </div>
+	    <div th:include="frontend/common::commonFooter"></div>
+	</div>
 
 </body>
 </html>

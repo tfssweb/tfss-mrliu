@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="frontend/common::commonHeader('影视')">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>影视</title>
+</head>
+<body>
+<div class="container">
+    <div th:include="frontend/common::commonNav"></div>
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading" th:text="影视列表">影视</div>
+
+        <!-- Table -->
+        <table class="table table-striped">
+            <tbody>
+            
+            <div class="container-fluid">
+				<img src="static/images/1.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/2.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/3.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/4.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/5.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/6.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+			
+				<img src="static/images/7.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/8.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/9.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/10.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/11.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+				<img src="static/images/12.jpg" alt="..." class="img-rounded" style="width: 140px;height: 180px;margin: 20px;">
+           
+           </div>
+            <tr th:each="video : ${videoList}">
+                <td>
+                    <form action="/ckplayer" method="post">
+                        <button class="btn btn-success" >播放</button>
+                        <a class="btn btn-default" th:text="${video.videoId}"></a>
+                        <a class="btn btn btn-info" th:text="${video.videoName}"></a>
+                        <a class="btn btn-default" th:text="${video.videoLabel}"></a>
+                        <a class="btn btn-link" th:text="${video.videoUrl}"></a>
+                        <a class="btn btn-default" th:text="${video.videoInfo}"></a>
+                        <a class="btn btn-primary" th:text="${video.videoPattern}"></a>
+                        <a class="btn btn-default" th:text="${video.videoClarity}"></a>
+                        <a class="btn btn-warning" th:text="${video.videoWeight}"></a>
+                        <input type="hidden" name="videoId" th:value="${video.videoId}">
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div th:include="frontend/common::commonFooter"></div>
+</div>
+
+</body>
+</html>

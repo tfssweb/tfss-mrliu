@@ -56,10 +56,10 @@
 				//duration: 500, //设置视频总时间
 				cktrack: 'static/ckplayer/material/srt.srt', //字幕文件
 				poster: 'static/ckplayer/material/poster.jpg', //封面图片
-				preview: { //预览图片
-					file: ['static/ckplayer/material/mydream_en1800_1010_01.png', 'static/ckplayer/material/mydream_en1800_1010_02.png'],
-					scale: 2
-				},
+// 				preview: { //预览图片
+// 					file: ['static/ckplayer/material/mydream_en1800_1010_01.png', 'static/ckplayer/material/mydream_en1800_1010_02.png'],
+// 					scale: 2
+// 				},
 				config: '', //指定配置函数
 				debug: true, //是否开启调试模式
 				//flashplayer: true, //强制使用flashplayer
@@ -102,7 +102,8 @@
 			    //    ['http://img.ksbbs.com/asset/Mon_1703/eb048d7839442d0.mp4', 'video/mp4', '英文高清', 10],
 			    //    ['http://img.ksbbs.com/asset/Mon_1703/d30e02a5626c066.mp4', 'video/mp4', '英文超清', 0]
 			    //]
-				
+// 				video: 'http://new.jsyunbf.com/20180301/Oloe1I0A/index.m3u8'
+// 				video: 'http://vip888.kuyun99.com/20181222/iP9j8geT/index.m3u8'
 				video: [
 					[videoInfo.videoUrl, videoInfo.videoPattern, videoInfo.videoClarity, videoInfo.videoWeight]
 // 					['http://img.ksbbs.com/asset/Mon_1703/05cacb4e02f9d9e.mp4', 'video/mp4', '中文标清', '0']
@@ -125,7 +126,7 @@
 				player.addListener('screenshot', screenshotHandler); //监听截图功能
 				player.addListener('mouse', mouseHandler); //监听鼠标坐标
 				player.addListener('frontAd', frontAdHandler); //监听前置广告的动作
-				player.addListener('wheel', wheelHandler); //监听视频放大缩小
+// 				player.addListener('wheel', wheelHandler); //监听视频放大缩小
 				player.addListener('controlBar', controlBarHandler); //监听控制栏显示隐藏事件
 				player.addListener('clickEvent', clickEventHandler); //监听点击事件
 				player.addListener('definitionChange', definitionChangeHandler); //监听清晰度切换事件
@@ -363,7 +364,7 @@
 							marginRight: 10, //图片离右边的距离
 							marginTop: 10, //图片离上边的距离
 							marginBottom: 10, //图片离下边的距离
-							clickEvent: "link->http://www.ckplayer.com"
+							clickEvent: "link->http://www.tfssweb.com"
 						}, {
 							type: 'text', //说明是文本
 							text: '演示弹幕内容，弹幕只支持普通文本，不支持HTML', //文本内容

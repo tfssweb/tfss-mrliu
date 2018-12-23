@@ -197,7 +197,7 @@ function ckplayerConfig() {
 		};
 		//全局变量/变量类型：Array/功能：右键菜单：[菜单标题,类型(link:链接，default:灰色，function：调用函数，javascript:调用js函数),执行内容(包含链接地址，函数名称),[line(间隔线)]]
 		this.contextMenu = [
-			['ckplayer', 'link', 'http://www.ckplayer.com'],
+			['颓废书生', 'link', 'http://www.tfssweb.com'],
 			['version:X', 'default', 'line']
 		];
 		//全局变量/变量类型：Array/功能：错误列表

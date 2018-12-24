@@ -11,3 +11,6 @@
 ### 数据库
 - MySql
 - Druid
+
+### 解析地址
+- https://api.123zx.net/m3u8/play.html?url=

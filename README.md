@@ -14,3 +14,5 @@
 
 ### 解析地址
 - https://api.123zx.net/m3u8/play.html?url=
+- http://api.bbbbbb.me/jx/?url=
+- http://app.baiyug.cn:2019/vip/?url=

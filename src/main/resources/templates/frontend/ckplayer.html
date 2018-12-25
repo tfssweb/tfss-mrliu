@@ -4,8 +4,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>影视</title>
-		<script type="text/javascript" th:src="@{static/ckplayer/ckplayer/ckplayer.js}" charset="UTF-8"></script>
-	 <link rel="stylesheet" th:href="@{static/bootstrap/css/bootstrap.min.css}">
+		<script type="text/javascript" th:src="@{/static/ckplayer/ckplayer/ckplayer.js}" charset="UTF-8"></script>
+	 <link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.min.css}">
 		<style type="text/css">
 			body {
 				margin: 0;
@@ -24,7 +24,7 @@
 <!-- 	<div class="container-fluid padding-top-10 padding-bottom-10"> -->
 <!-- 			<div class="row"> -->
 <!-- 				<div class="col-xs-12 col-sm-5 col-md-5 col-sm-offset-1 col-md-offset-1"> -->
-<!-- 					<img src="static/images/logo.png" id="logo"  style="height: 50px;margin:18px 110px"/> -->
+<!-- 					<img src="/static/images/logo.png" id="logo"  style="height: 50px;margin:18px 110px"/> -->
 <!-- 				</div> -->
 <!-- 				<div class="col-xs-12 col-sm-5 col-md-5 text-right padding-top-10"> -->
 <!-- 					<h5>当前版本：V1.0（更新时间：2018-12-18）</h5> -->
@@ -54,10 +54,10 @@
 				loop: false, //播放结束是否循环播放
 // 				autoplay: true, //是否自动播放
 				//duration: 500, //设置视频总时间
-				cktrack: 'static/ckplayer/material/srt.srt', //字幕文件
-				poster: 'static/ckplayer/material/poster.jpg', //封面图片
+				cktrack: '/static/ckplayer/material/srt.srt', //字幕文件
+				poster: '/static/ckplayer/material/poster.jpg', //封面图片
 // 				preview: { //预览图片
-// 					file: ['static/ckplayer/material/mydream_en1800_1010_01.png', 'static/ckplayer/material/mydream_en1800_1010_02.png'],
+// 					file: ['/static/ckplayer/material/mydream_en1800_1010_01.png', '/static/ckplayer/material/mydream_en1800_1010_02.png'],
 // 					scale: 2
 // 				},
 				config: '', //指定配置函数
@@ -355,7 +355,7 @@
 					list: [ //list=定义元素列表
 						{
 							type: 'png', //定义元素类型：只有二种类型，image=使用图片，text=文本
-							file: 'static/ckplayer/material/logo.png', //图片地址
+							file: '/static/ckplayer/material/logo.png', //图片地址
 							radius: 30, //图片圆角弧度
 							width: 30, //定义图片宽，必需要定义
 							height: 30, //定义图片高，必需要定义
@@ -414,7 +414,7 @@
 				var danmuObj = {
 					list: [{
 						type: 'image', //定义元素类型：只有二种类型，image=使用图片，text=文本
-						file: 'static/ckplayer/material/logo.png', //图片地址
+						file: '/static/ckplayer/material/logo.png', //图片地址
 						radius: 30, //图片圆角弧度
 						width: 30, //定义图片宽，必需要定义
 						height: 30, //定义图片高，必需要定义

@@ -17,7 +17,7 @@
 		            <tr th:each="video : ${videoList}" >
 		           	 <form action="/ckplayer" method="post">
 		           		 <input type="hidden" name="videoId" th:value="${video.videoId}">
-						 <input type="image" th:src="${video.videoThumbnail}" src="static/images/logo.png" alt="点击播放" class="img-rounded" style="width: 140px;height: 190px;margin: 23px 15px 10px 30px"/>
+						 <input type="image" th:src="${video.videoThumbnail}" src="/static/images/logo.png" alt="点击播放" class="img-rounded" style="width: 140px;height: 190px;margin: 23px 15px 10px 30px"/>
 		            </form>
 		            </tr>
 		        </thead>

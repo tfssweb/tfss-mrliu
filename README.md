@@ -19,6 +19,9 @@ form_basic.html
 ### 页面截图
 
 ![readme1](src/main/resources/doc/resource/readme1.png)
+![readme1](src/main/resources/doc/resource/readme2.png)
+![readme1](src/main/resources/doc/resource/readme3.png)
+![readme1](src/main/resources/doc/resource/readme4.png)
 
 
 ### 解析地址

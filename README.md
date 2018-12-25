@@ -1,3 +1,7 @@
+### 代码
+- 欢迎Fork
+- 欢迎Star
+
 ### 后台技术
 - SpringBoot
 - Mybatis
@@ -11,6 +15,11 @@ form_basic.html
 ### 数据库
 - MySql
 - Druid
+
+### 页面截图
+
+![readme1](/doc/resource/readme1.png)
+
 
 ### 解析地址
 - https://api.123zx.net/m3u8/play.html?url=

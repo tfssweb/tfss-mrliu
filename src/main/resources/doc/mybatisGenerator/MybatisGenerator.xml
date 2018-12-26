@@ -66,9 +66,9 @@
 			<!-- 指定列的java数据类型 -->
 <!-- 	      	<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR" /> -->
 <!-- 		</table> -->
-<!-- 		<table tableName="t_admin" domainObjectName="Admin"/>  -->
+		<table tableName="t_admin_info" domainObjectName="AdminInfo"/> 
 <!-- 		<table tableName="t_mjmiaccttyp" domainObjectName="Mjmiaccttyp"/>  -->
 <!-- 		<table tableName="t_user_info" domainObjectName="UserInfo"/>  -->
-		<table tableName="t_ckplayer_video" domainObjectName="Video"/> 
+<!-- 		<table tableName="t_ckplayer_video" domainObjectName="Video"/>  -->
 	</context>
 </generatorConfiguration>

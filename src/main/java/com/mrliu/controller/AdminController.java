@@ -2,23 +2,25 @@ package com.mrliu.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.mrliu.generate.mapper.AdminInfoMapper;
-import com.mrliu.generate.mapper.VideoMapper;
 import com.mrliu.generate.pojo.AdminInfo;
-import com.mrliu.generate.pojo.AdminInfoExample;
 import com.mrliu.generate.pojo.Video;
-import com.mrliu.generate.pojo.VideoExample;
-import com.mrliu.support.dao.DataAccessManager;
+import com.mrliu.service.AdminService;
+import com.mrliu.service.VideoService;
 
 @Controller 
 @RequestMapping(value = "/admin")
-public class AdminInfoController {
+public class AdminController {
 
+	@Autowired
+    private AdminService adminService;
+	@Autowired
+	private VideoService videoService;
 	
 	@RequestMapping("/login")  
 	public String login(Model model){  
@@ -26,14 +28,17 @@ public class AdminInfoController {
 	}
 	
 	
-//	管理员登陆
+    /**
+     * 登陆验证
+     * @param model
+     * @param username
+     * @param password
+     * @return
+     */
 	@RequestMapping("/adminIndex")  
 	public String adminLogin(Model model,@RequestParam String username,@RequestParam String password){  
 		
-		AdminInfoExample adminInfoExample = new AdminInfoExample();
-		
-		List<AdminInfo> adminList = DataAccessManager.getMapper(AdminInfoMapper.class).selectByExample(adminInfoExample);
-		System.out.println(adminList);
+		List<AdminInfo> adminList = adminService.getAllAdmin();
 		
 		AdminInfo adminInfo = null;
 		for (int i = 0; i < adminList.size(); i++) {
@@ -45,5 +50,23 @@ public class AdminInfoController {
 		
 		return "backend/404";
 	}
+	
+	/**
+	 * 获取所有video
+	 * @param model
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	@RequestMapping("/adminLogin")  
+	public String getVideoList(Model model,@RequestParam String username,@RequestParam String password){  
+		
+		List<Video> videoList = videoService.getAllVideo();
+		System.out.println(videoList);
+		model.addAttribute("videoList", videoList);
+		return "frontend/videos";
+	}
+	
+	
 	
 }

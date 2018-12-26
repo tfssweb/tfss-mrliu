@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.mrliu.generate.mapper.VideoMapper;
 import com.mrliu.generate.pojo.Video;
 import com.mrliu.generate.pojo.VideoExample;
+import com.mrliu.service.VideoService;
 import com.mrliu.support.dao.DataAccessManager;
 
 @Controller   //需要配合视图使用
@@ -19,6 +20,9 @@ import com.mrliu.support.dao.DataAccessManager;
 //@RequestMapping("/video")
 public class VideoController {
 
+	@Autowired
+	private VideoService videoService;
+	
 	@Autowired
 	private Sid sid;
 	
@@ -31,8 +35,8 @@ public class VideoController {
 	@RequestMapping("/getVideoList")  
     public String getVideoList(Model model){  
 		
-		VideoExample videoExample = new VideoExample();
-		List<Video> videoList = DataAccessManager.getMapper(VideoMapper.class).selectByExample(videoExample);
+		List<Video> videoList = videoService.getAllVideo();
+		
 		System.out.println(videoList);
 		model.addAttribute("videoList", videoList);
 		return "frontend/videos";
@@ -49,16 +53,14 @@ public class VideoController {
         return "frontend/ckplayer";
     }
 	
-//	查询
+	/**
+	 * 通过关键字，对video_name video_label进行模糊查询
+	 * @param keyword
+	 * @return
+	 */
 	@RequestMapping("/search")  
 	public String searchResult(Model model,@RequestParam String keyword) {
-		System.out.println(keyword);
-		keyword = "%"+keyword+"%";
-		VideoExample videoExample = new VideoExample();
-		videoExample.createCriteria().andVideoNameLike(keyword);	//根据videoName模糊查询
-		videoExample.or().andVideoLabelLike(keyword);				//根据videoLabel模糊查询
-		
-		List<Video> videoList = DataAccessManager.getMapper(VideoMapper.class).selectByExample(videoExample);
+		List<Video> videoList = videoService.getVideoByNameOrLabel(keyword);
 		System.out.println(videoList);
 		model.addAttribute("videoList", videoList);
 		model.addAttribute("videoSum", videoList.size());

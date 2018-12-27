@@ -35,7 +35,7 @@ public class AdminController {
      * @param password
      * @return
      */
-	@RequestMapping("/adminIndex")  
+	@RequestMapping("/index")  
 	public String adminLogin(Model model,@RequestParam String username,@RequestParam String password){  
 		
 		List<AdminInfo> adminList = adminService.getAllAdmin();
@@ -44,8 +44,9 @@ public class AdminController {
 		for (int i = 0; i < adminList.size(); i++) {
 			adminInfo = adminList.get(i);
 			if(username.equals(adminInfo.getUsername()) && password.equals(adminInfo.getPassword())){
-//				return "backend/index";
-				return "redirect:home";
+				return "backend/index";
+//				return "redirect:home";
+//				return "forward:home";
 			}
 		}
 		

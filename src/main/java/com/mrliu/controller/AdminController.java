@@ -57,7 +57,7 @@ public class AdminController {
 	@RequestMapping("/home")  
 	public String index(Model model){  
 		List<Video> videoList = videoService.getAllVideo();
-		model.addAttribute("videoSize", videoList.size());
+		model.addAttribute("videoSum", videoList.size());
 		return "backend/home";
 	}
 	

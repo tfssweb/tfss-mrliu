@@ -44,29 +44,20 @@ public class AdminController {
 		for (int i = 0; i < adminList.size(); i++) {
 			adminInfo = adminList.get(i);
 			if(username.equals(adminInfo.getUsername()) && password.equals(adminInfo.getPassword())){
-				return "backend/index";
+//				return "backend/index";
+				return "redirect:home";
 			}
 		}
 		
 		return "backend/404";
 	}
 	
-	/**
-	 * 获取所有video
-	 * @param model
-	 * @param username
-	 * @param password
-	 * @return
-	 */
-	@RequestMapping("/adminLogin")  
-	public String getVideoList(Model model,@RequestParam String username,@RequestParam String password){  
-		
+	
+	@RequestMapping("/home")  
+	public String index(Model model){  
 		List<Video> videoList = videoService.getAllVideo();
-		System.out.println(videoList);
-		model.addAttribute("videoList", videoList);
-		return "frontend/videos";
+		model.addAttribute("videoSize", videoList.size());
+		return "backend/home";
 	}
-	
-	
 	
 }

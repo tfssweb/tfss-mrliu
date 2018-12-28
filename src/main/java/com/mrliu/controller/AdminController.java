@@ -53,7 +53,11 @@ public class AdminController {
 		return "backend/404";
 	}
 	
-	
+	/**
+	 * 概览页
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/home")  
 	public String index(Model model){  
 		List<Video> videoList = videoService.getAllVideo();
@@ -63,4 +67,10 @@ public class AdminController {
 		return "backend/home";
 	}
 	
+	@RequestMapping("/videoList")  
+	public String videoList(Model model){  
+		List<Video> videoList = videoService.getAllVideo();
+		model.addAttribute("videoList", videoList);
+		return "backend/videolist";
+	}
 }

@@ -44,4 +44,24 @@ public class VideoService {
 		return videoList;
 	}
 	
+	public void addVideo(@RequestParam String videoName,
+						@RequestParam String videoUrl,
+						@RequestParam String videoPattern,
+						@RequestParam String videoLabel,
+						@RequestParam String videoInfo,
+						@RequestParam Integer videoWeight){
+		
+		Video video = new Video();
+		video.setVideoName(videoName);
+		video.setVideoUrl(videoUrl);
+		video.setVideoPattern(videoPattern);
+		video.setVideoInfo(videoInfo);
+		video.setVideoWeight(videoWeight);
+		
+		DataAccessManager.getMapper(VideoMapper.class).insertSelective(video);
+		
+		
+		
+	}
+	
 }

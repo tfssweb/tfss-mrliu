@@ -66,11 +66,37 @@ public class AdminController {
 		model.addAttribute("adminSum", adminList.size());
 		return "backend/home";
 	}
-	
+	/***
+	 * 媒体列表
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/videoList")  
 	public String videoList(Model model){  
 		List<Video> videoList = videoService.getAllVideo();
 		model.addAttribute("videoList", videoList);
 		return "backend/videolist";
+	}
+	
+	/**
+	 * 添加媒体
+	 * @param model
+	 * @param videoName
+	 * @param videoUrl
+	 * @param videoPattern
+	 * @param videoLabel
+	 * @param videoInfo
+	 * @param videoWeight
+	 * @return
+	 */
+	@RequestMapping("/addVideo")  
+	public String addVideo(Model model,@RequestParam String videoName,
+										@RequestParam String videoUrl,
+										@RequestParam String videoPattern,
+										@RequestParam String videoLabel,
+										@RequestParam String videoInfo,
+										@RequestParam Integer videoWeight){  
+		videoService.addVideo(videoName, videoUrl, videoPattern, videoLabel, videoInfo, videoWeight);
+		return "redirect:videoList";
 	}
 }

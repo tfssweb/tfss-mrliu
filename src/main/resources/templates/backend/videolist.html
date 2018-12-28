@@ -47,8 +47,9 @@
                             </a>
                         </div>
                     </div>
+                    <form action="/admin/deleteVideoByVideoId" method="post" >
                     <div class="ibox-content">
-
+					
                         <table class="table table-striped table-bordered table-hover dataTables-example">
 <!--                         <div class="text-center"> -->
                             <button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加 </button>
@@ -72,6 +73,7 @@
 									<th>操作</th>
                                 </tr>
                             </thead>
+                            
                             <tbody>
                                 <tr class="gradeX" th:each="video : ${videoList}" >
                                     <td th:text="${video.videoId}">-</td>
@@ -90,13 +92,19 @@
 <!--                                     <td class="center" th:text="${video.supportsum}">-</td> -->
                                 	<td>
 										<div class="btn-group">
-			                                <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span> </button>
-			                                <ul class="dropdown-menu">
-			                                    <li><a data-toggle="modal" data-target="#myModal6">详情</a> </li>
-			                                    <li><a href="buttons.html#" class="font-bold">修改</a> </li>
-			                                    <li class="divider"></li>
-			                                    <li><a href="buttons.html#">删除</a></li>
-			                                </ul>
+<!-- 			                                <button data-toggle="dropdown" class="btn btn-primary btn-xs dropdown-toggle">操作 <span class="caret"></span> </button> -->
+<!-- 			                                <ul class="dropdown-menu"> -->
+<!-- 			                                    <li><a data-toggle="modal" data-target="#myModal6">详情</a> </li> -->
+<!-- 			                                    <li><a href="buttons.html#" class="font-bold">修改</a> </li> -->
+<!-- 			                                    <li class="divider"></li> -->
+<!-- 			                                    <li><a href="buttons.html#">删除</a></li> -->
+<!-- 			                                </ul> -->
+			                            
+			                            	<div class="btn-group">
+				                                <button class="btn btn-white" type="button">详情</button>
+				                                <button class="btn btn-primary" type="button">更新</button>
+				                                <button class="btn btn-white" type="submit" name="videoId" th:value="${video.videoId}">删除</button>
+				                            </div>
 			                            </div>
 									</td>
                                 </tr>
@@ -125,11 +133,11 @@
                         </table>
 
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
 	<form action="/admin/addVideo" method="post">
 	
 			<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">

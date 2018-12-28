@@ -44,6 +44,15 @@ public class VideoService {
 		return videoList;
 	}
 	
+	/**
+	 * 添加媒体
+	 * @param videoName
+	 * @param videoUrl
+	 * @param videoPattern
+	 * @param videoLabel
+	 * @param videoInfo
+	 * @param videoWeight
+	 */
 	public void addVideo(@RequestParam String videoName,
 						@RequestParam String videoUrl,
 						@RequestParam String videoPattern,
@@ -60,8 +69,13 @@ public class VideoService {
 		
 		DataAccessManager.getMapper(VideoMapper.class).insertSelective(video);
 		
-		
-		
 	}
 	
+	/**
+	 * 根据videoId删除媒体
+	 * @param videoId
+	 */
+	public void deleteVideoByVideoId(@RequestParam Integer videoId){
+		DataAccessManager.getMapper(VideoMapper.class).deleteByPrimaryKey(videoId);
+	}
 }

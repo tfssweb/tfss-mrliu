@@ -99,4 +99,16 @@ public class AdminController {
 		videoService.addVideo(videoName, videoUrl, videoPattern, videoLabel, videoInfo, videoWeight);
 		return "redirect:videoList";
 	}
+	
+	/**
+	 * 根据videoId删除媒体
+	 * @param model
+	 * @param videoId
+	 * @return
+	 */
+	@RequestMapping("/deleteVideoByVideoId")  
+	public String deleteVideoByVideoId(Model model,@RequestParam Integer videoId) {
+		videoService.deleteVideoByVideoId(videoId);
+		return "redirect:videoList";
+	}
 }

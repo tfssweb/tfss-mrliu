@@ -21,6 +21,7 @@ public class VideoService {
 	 */
 	public List<Video> getAllVideo(){
 		VideoExample videoExample = new VideoExample();
+//		videoExample.setOrderByClause("video_uptime desc,video_id asc");
 		List<Video> videoList = DataAccessManager.getMapper(VideoMapper.class).selectByExample(videoExample);
 		System.out.println(videoList);
 		return videoList;

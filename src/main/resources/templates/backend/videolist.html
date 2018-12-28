@@ -85,7 +85,7 @@
 <!--                                     <td class="center" th:text="${video.videoInfo}">-</td> -->
                                     <td class="center" th:text="${video.videoClarity}">-</td>
                                     <td class="center" th:text="${video.videoWeight}">-</td>
-                                    <td class="center" th:text="${video.videoUptime}">-</td>
+                                    <td class="center" th:text="${#dates.format(video.videoUptime, 'yyyy-MM-dd HH:mm:ss')}">-</td>
 <!--                                     <td class="center" th:text="${video.playsum}">-</td> -->
 <!--                                     <td class="center" th:text="${video.comentsum}">-</td> -->
 <!--                                     <td class="center" th:text="${video.collectsum}">-</td> -->
@@ -112,7 +112,7 @@
                             
                             
                             <tfoot>
-                                <tr>
+                                <tr  style="background-color: RGB(114,102,186);color: white;">
                                    <th>ID</th>
                                     <th>名称</th>
                                     <th>缩略图</th>

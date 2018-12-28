@@ -58,14 +58,14 @@
                                 <tr style="background-color: RGB(114,102,186);color: white;">
                                     <th>ID</th>
                                     <th>名称</th>
-                                    <th>缩略图</th>
+                                    <th style="width: 50px;">缩略图</th>
 <!--                                     <th>URL</th> -->
                                     <th>格式</th>
                                     <th>标签</th>
 <!--                                     <th>介绍</th> -->
                                     <th>清晰度</th>
                                     <th>权重</th>
-                                    <th>更新时间</th>
+                                    <th style="width: 135px;">更新时间</th>
 <!--                                     <th>播放次数</th> -->
 <!--                                     <th>评论次数</th> -->
 <!--                                     <th>收藏次数</th> -->
@@ -78,7 +78,7 @@
                                 <tr class="gradeX" th:each="video : ${videoList}" >
                                     <td th:text="${video.videoId}">-</td>
                                     <td th:text="${video.videoName}">-</td>
-                                    <td th:text="${video.videoThumbnail}">-</td>
+                                    <td ><img th:src="${video.videoThumbnail}" style="width: 40px;height: 50px;"></td>
 <!--                                     <td class="center" th:text="${video.videoUrl}">-</td> -->
                                     <td class="center" th:text="${video.videoPattern}">-</td>
                                     <td class="center" th:text="${video.videoLabel}">-</td>

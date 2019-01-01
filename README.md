@@ -36,6 +36,7 @@ form_basic.html
 - http://app.baiyug.cn:2019/vip/?url=
 
 ### 可爬
-- http://www.mp4sf.com/
+- http://www.mp4sf.com/  已完成
+- http://www.ccidyy.com/dianying/
 - https://www.mp4ju.com/
 - http://www.beiwo8888.com/

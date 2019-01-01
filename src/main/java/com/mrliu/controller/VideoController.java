@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.github.pagehelper.PageHelper;
 import com.mrliu.generate.mapper.VideoMapper;
 import com.mrliu.generate.pojo.Video;
 import com.mrliu.generate.pojo.VideoExample;
@@ -34,7 +35,7 @@ public class VideoController {
 //	获取所有视频列表
 	@RequestMapping("/getVideoList")  
     public String getVideoList(Model model){  
-		
+		PageHelper.startPage(1, 12);
 		List<Video> videoList = videoService.getAllVideo();
 		
 		System.out.println(videoList);

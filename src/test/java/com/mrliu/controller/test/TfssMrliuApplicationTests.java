@@ -39,6 +39,7 @@ public class TfssMrliuApplicationTests {
 		PageInfo<Video> v = new PageInfo<>(videos);
 		
 		System.out.println(startPage.toPageInfo().getTotal());
+		System.out.println(v.isHasNextPage());
 		System.out.println(v);
 		
 		

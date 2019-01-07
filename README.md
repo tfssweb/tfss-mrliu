@@ -26,6 +26,7 @@ form_basic.html
 ![readme2](src/main/resources/doc/resource/readme2.png)
 ![readme3](src/main/resources/doc/resource/readme3.png)
 ![readme4](src/main/resources/doc/resource/readme4.png)
+![readme7](src/main/resources/doc/resource/readme7.png)
 ![readme5](src/main/resources/doc/resource/readme5.png)
 ![readme6](src/main/resources/doc/resource/readme6.png)
 

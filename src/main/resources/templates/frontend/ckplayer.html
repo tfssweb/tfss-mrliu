@@ -39,9 +39,11 @@
 <!-- 			</div> -->
 <!-- 		</div> -->
 <!-- 视频组件 -->
-		<div id="video" style="width: 100%; height: 500px;scrolling:no"></div>
-		
-		
+		<div class="alert alert-success" role="alert">
+			<div th:text="'影视名称：'+${videoInfo.videoName}"></div>
+			<div th:text="'影视介绍：'+${videoInfo.videoInfo}"></div>
+		</div>
+		<div id="video" style="width: 100%; height: 420px;scrolling:no"></div>
 		<script th:inline="javascript">
 			var videoInfo = [[${videoInfo}]];
 			console.log(videoInfo)

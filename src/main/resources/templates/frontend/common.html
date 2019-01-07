@@ -1,52 +1,96 @@
 <!DOCTYPE html>
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="commonHeader(title)">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title th:text="${title}"></title>
-    <link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.min.css}">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title th:text="${title}"></title>
+<link rel="stylesheet"
+	th:href="@{/static/bootstrap/css/bootstrap.min.css}">
 <!--     <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" /> -->
 
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-<div th:fragment="commonNav">
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="/getVideoList">影视</a></li>
-                <li><a href="#">导航二</a></li>
-                <li><a href="#">导航三</a></li>
-                <li><a href="#">导航四</a></li>
-                <li style="margin-top: 8px;margin-left: 470px;">
-               		<form class="form-inline" action="/search" method="post">
-						  <div class="form-group">
-<!-- 						    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label> -->
-						    <div class="input-group">
-						      <div class="input-group-addon">颓废书生</div>
-						      <input type="text" class="form-control" name="keyword" id="exampleInputAmount" placeholder="大圣归来、金刚狼">
-<!-- 						      <div class="input-group-addon">.00</div> -->
-						    </div>
-						  </div>
-						  <button type="submit" class="btn btn-primary">搜索</button>
-					</form>
-				</li>
-                
-            </ul>
-        </div>
-    </nav>
-</div>
-<footer th:fragment="commonFooter">
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script th:src="@{/static/bootstrap/js/jquery/jquery.min.js}"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
-</footer>
+	<div th:fragment="commonNav">
+		<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/getVideoList">影视</a></li>
+					<li><a href="#">导航二</a></li>
+					<li><a href="#">导航三</a></li>
+					<li><a href="#">导航四</a></li>
+					<li style="margin-top: 8px; margin-left: 470px;">
+						<form class="form-inline" action="/search" method="post">
+							<div class="form-group">
+								<!-- 						    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label> -->
+								<div class="input-group">
+									<div class="input-group-addon">颓废书生</div>
+									<input type="text" class="form-control" name="keyword"
+										id="exampleInputAmount" placeholder="大圣归来、金刚狼">
+									<!-- 						      <div class="input-group-addon">.00</div> -->
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary">搜索</button>
+						</form>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+	</div>
+<!-- 分页 -->
+	<footer th:fragment="commonPage">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<nav aria-label="Page navigation">
+						<ul class="pagination">
+							<li><a th:href="@{'/getVideoList/1/12'}" href="#">首页</a></li>
+
+							<li th:if="${pageInfo.hasPreviousPage}"><a
+								th:href="@{'/getVideoList/'+${pageInfo.pageNum-1}+'/12'}"
+								href="#" aria-label="Previous"> <span aria-hidden="true">«</span>
+							</a></li>
+
+
+							<!-- 					    <li th:if="${pageInfo.hasPreviousPage}" th:each="page:${pageInfo.navigatepageNums}" ><a th:href="@{'/getVideoList/'+${page}+'/12'}" th:text="${page}"  href="#">1</a></li> -->
+
+							<li th:if="${pageInfo.hasPreviousPage}"><a
+								th:href="@{'/getVideoList/'+${pageInfo.prePage}+'/12'}"
+								th:text="${pageInfo.pageNum-1}" href="#">4</a></li>
+							<li><a
+								th:href="@{'/getVideoList/'+${pageInfo.pageNum}+'/12'}"
+								th:text="${pageInfo.pageNum}" href="#">1</a></li>
+							<li th:if="${pageInfo.hasNextPage}"><a
+								th:href="@{'/getVideoList/'+${pageInfo.pageNum+1}+'/12'}"
+								th:text="${pageInfo.nextPage}" href="#">2</a></li>
+
+
+
+							<li th:if="${pageInfo.hasNextPage}"><a
+								th:href="@{'/getVideoList/'+${pageInfo.nextPage}+'/12'}"
+								href="#" aria-label="Next"> <span aria-hidden="true">»</span>
+							</a></li>
+							<li><a th:href="@{'/getVideoList/'+${pageInfo.pages}+'/12'}"
+								href="#">末页</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<footer th:fragment="commonFooter">
+		<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+		<script th:src="@{/static/bootstrap/js/jquery/jquery.min.js}"></script>
+		<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+		<script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+	</footer>
 </body>
 </html>

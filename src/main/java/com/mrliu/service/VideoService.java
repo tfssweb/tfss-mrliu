@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.mrliu.generate.mapper.VideoMapper;
 import com.mrliu.generate.pojo.Video;
 import com.mrliu.generate.pojo.VideoExample;
@@ -25,6 +27,16 @@ public class VideoService {
 		List<Video> videoList = DataAccessManager.getMapper(VideoMapper.class).selectByExample(videoExample);
 		System.out.println(videoList);
 		return videoList;
+	}
+	
+	public PageInfo<Video> getAllVideo(int pageNum, int pageSize){
+		PageHelper.startPage(pageNum, pageSize);
+		VideoExample videoExample = new VideoExample();
+//		videoExample.setOrderByClause("video_uptime desc,video_id asc");
+		List<Video> videoList = DataAccessManager.getMapper(VideoMapper.class).selectByExample(videoExample);
+		PageInfo<Video> pageInfo = new PageInfo<>(videoList);
+		System.out.println(pageInfo);
+		return pageInfo;
 	}
 	
 	/**

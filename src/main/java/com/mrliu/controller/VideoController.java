@@ -6,10 +6,12 @@ import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.mrliu.generate.mapper.VideoMapper;
 import com.mrliu.generate.pojo.Video;
 import com.mrliu.generate.pojo.VideoExample;
@@ -35,11 +37,22 @@ public class VideoController {
 //	获取所有视频列表
 	@RequestMapping("/getVideoList")  
     public String getVideoList(Model model){  
-		PageHelper.startPage(1, 12);
-		List<Video> videoList = videoService.getAllVideo();
+		PageInfo<Video> pageInfo = videoService.getAllVideo(1, 12);
 		
-		System.out.println(videoList);
-		model.addAttribute("videoList", videoList);
+		System.out.println(pageInfo);
+		model.addAttribute("videoList", pageInfo.getList());
+		model.addAttribute("pageInfo", pageInfo);
+		return "frontend/videos";
+	}
+	
+//	获取所有视频列表
+	@RequestMapping("/getVideoList/{pageNum}/{pageSize}")  
+    public String getVideoList(Model model,@PathVariable("pageNum") int pageNum,@PathVariable("pageSize") int pageSize){  
+		PageInfo<Video> pageInfo = videoService.getAllVideo(pageNum, pageSize);
+		
+		System.out.println(pageInfo);
+		model.addAttribute("videoList", pageInfo.getList());
+		model.addAttribute("pageInfo", pageInfo);
 		return "frontend/videos";
 	}
 	

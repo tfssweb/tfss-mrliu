@@ -37,6 +37,7 @@ form_basic.html
 - https://api.123zx.net/m3u8/play.html?url=
 - http://api.bbbbbb.me/jx/?url=
 - http://app.baiyug.cn:2019/vip/?url=
+- http://api.ledboke.com/?url=
 
 ### 可爬
 - http://www.mp4sf.com/  已完成

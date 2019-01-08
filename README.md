@@ -5,6 +5,7 @@
 ### 后台技术
 - SpringBoot
 - Mybatis
+- Pagehelper
 - Thymeleaf
 - Redis
 - 支持定时任务
@@ -15,6 +16,7 @@ form_basic.html
 ### 开发计划
 - 后台管理开发，现在已经集成，开发进行中...
 - python爬虫开发，进行中...
+	- 已完成 `http://www.mp4sf.com/`网站爬虫
 
 ### 数据库
 - MySql
